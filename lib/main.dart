@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_monkey_app/ui/app%20ui/home_screen.dart';
 
 
 import 'package:meal_monkey_app/utils/constant.dart';
@@ -26,7 +27,8 @@ enum ScreenName {
   resetPasswordScreen,
   codeMobileScreen,
   newPasswordScreen,
-  onBoardingScreen
+  onBoardingScreen,
+  homeScreen
 }
 
 class MealMonkeyApp extends StatelessWidget {
@@ -51,6 +53,8 @@ class MealMonkeyApp extends StatelessWidget {
         ScreenName.newPasswordScreen.toString(): (contex) =>
             const NewPasswordScreen(),
         ScreenName.onBoardingScreen.toString(): (contex) => OnBoardingScreen(),
+        ScreenName.homeScreen.toString(): (contex) => HomeScreen(),
+
       },
     );
   }

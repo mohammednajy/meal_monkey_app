@@ -6,3 +6,5 @@ class UserInfo {
   late String password;
   UserInfo();
 }
+
+List<UserInfo> users = [];

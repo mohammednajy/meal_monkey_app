@@ -15,3 +15,23 @@ ThemeData themeData = ThemeData(
             TextStyle(color: GREYCOLOR, fontSize: 15, fontFamily: 'Metropolis'),
         bodyText2: TextStyle(
             fontFamily: 'Metropolis', fontSize: 30, color: GREYCOLORHEDLINE)));
+
+Future<SnackBarClosedReason> SnackBarCustom(BuildContext context,
+    {required String message, required Function whenComplete}) {
+  return ScaffoldMessenger.of(context)
+      .showSnackBar(
+        SnackBar(
+          behavior: SnackBarBehavior.floating,
+          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          content: Text(message,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+          backgroundColor: Colors.green,
+          duration: Duration(seconds: 1),
+        ),
+      )
+      .closed
+      .whenComplete(whenComplete as Function());
+}

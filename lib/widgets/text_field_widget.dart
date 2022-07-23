@@ -11,6 +11,7 @@ class TextFieldWidget extends StatelessWidget {
     this.onSaved,
     this.validator,
     this.controller,
+    this.autovalidateMode = AutovalidateMode.onUserInteraction,
     Key? key,
   }) : super(key: key);
 
@@ -21,6 +22,7 @@ class TextFieldWidget extends StatelessWidget {
   Function? validator;
   Function? onSaved;
   TextEditingController? controller;
+  AutovalidateMode? autovalidateMode;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class TextFieldWidget extends StatelessWidget {
         controller: controller,
         validator: validator as String? Function(String?)?,
         keyboardType: keyboardType,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
+        autovalidateMode: autovalidateMode,
         obscureText: obscureText,
         decoration: InputDecoration(
             hintText: hintText,
