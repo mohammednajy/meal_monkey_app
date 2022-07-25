@@ -7,10 +7,18 @@ Color GREYCOLORHEDLINE = Color(0xFF4A4B4D);
 Color ORANGECOLOR = Color(0xFFFC6011);
 Color GREYCOLORBACKGROUND = Color(0xFFF2F2F2);
 Color GREYCOLORBACKGROUNDSECOUND = Color(0xFFD6D6D6);
+Color GREYLIGHT = Color(0xFFB6B7B7);
 
 ThemeData themeData = ThemeData(
-    scaffoldBackgroundColor: Colors.white,
+    fontFamily: 'Metropolis',
+    scaffoldBackgroundColor: Color.fromRGBO(255, 255, 255, 1),
     textTheme: TextTheme(
+        headline3: TextStyle(
+            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+        headline1: TextStyle(
+            color: GREYCOLORHEDLINE, fontSize: 20, fontWeight: FontWeight.w500),
+        headline2: TextStyle(
+            fontSize: 12, color: GREYLIGHT, fontWeight: FontWeight.w500),
         bodyText1:
             TextStyle(color: GREYCOLOR, fontSize: 15, fontFamily: 'Metropolis'),
         bodyText2: TextStyle(

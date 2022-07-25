@@ -82,8 +82,8 @@ flutter:
           weight: 500
         - asset: assets/fonts/Metropolis-Bold.otf
           weight: 700
-  #   - family: Trajan Pro
   #     fonts:
+  #   - family: Trajan Pro
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700

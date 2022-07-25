@@ -8,7 +8,10 @@ class TextFieldWidget extends StatelessWidget {
     required this.obscureText,
     required this.keyboardType,
     this.bottomMargin = 0,
+    this.prefixIcon,
     this.onSaved,
+    this.height = 65,
+    this.vertical = 25,
     this.validator,
     this.controller,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
@@ -23,12 +26,14 @@ class TextFieldWidget extends StatelessWidget {
   Function? onSaved;
   TextEditingController? controller;
   AutovalidateMode? autovalidateMode;
-
+  Widget? prefixIcon;
+  double height;
+  double vertical;
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: bottomMargin),
-      height: 65,
+      height: height,
       child: TextFormField(
         onSaved: onSaved as Function(String?)?,
         controller: controller,
@@ -37,12 +42,14 @@ class TextFieldWidget extends StatelessWidget {
         autovalidateMode: autovalidateMode,
         obscureText: obscureText,
         decoration: InputDecoration(
+            prefixIcon: prefixIcon,
             hintText: hintText,
             errorStyle: TextStyle(fontSize: 12, height: 0.3),
             hintStyle: TextStyle(color: Color(0xFFB6B7B7)),
             filled: true,
             fillColor: GREYCOLORBACKGROUND,
-            contentPadding: EdgeInsets.symmetric(horizontal: 34, vertical: 25),
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 34, vertical: vertical),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide.none)),

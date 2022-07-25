@@ -14,16 +14,30 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        centerTitle: true,
+        toolbarHeight: 90,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            TextTitleWidget(topPadding: 30, titel: 'Sign Up'),
+            SubTitleWidget(
+              content: 'Add your details to sign up',
+              bottomHeight: 20,
+            ),
+          ],
+        ),
+      ),
+      // resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 34),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              TextTitleWidget(titel: 'Sign Up'),
-              SubTitleWidget(
-                content: 'Add your details to sign up',
-                bottomHeight: 20,
+              SizedBox(
+                height: 20,
               ),
               SignUpFormWidget(),
               SizedBox(
